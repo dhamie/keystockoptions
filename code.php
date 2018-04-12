@@ -47,7 +47,7 @@ require 'link.php';
 
         header('location:login.htm');   
       }else{
-        echo mysqli_error($connection);
+        echo " mysqli_error($connection);";
 
      }
 }
