@@ -71,8 +71,7 @@ if (isset($_POST['submit1'])){
       session_start();
       $_SESSION['user'] =$user;
       //$_SESSION['time'] =time();
-      header('location:dash.php');
-    
+      header('location:dash.php');    
   }else{
           echo "Username or Password Incorect";
 
