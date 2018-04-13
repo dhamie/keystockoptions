@@ -1,0 +1,21 @@
+
+*** These modified files were found in JOE when it aborted on Fri Apr 13 10:32:38 2018
+*** JOE was aborted by UNIX signal 1
+
+*** File '/root/.gitconfig'
+
+# This is Git's per-user configuration file.
+[ajanieniolsolomon]
+# Please adapt and uncomment the following lines:
+#	name = root
+#	email = root@server.keystockoptions.git config --global --editcom
+
+*** File '(Unnamed)'
+/var/www/html/.git/MERGE_MSG
+/root/.gitconfig
+
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc
