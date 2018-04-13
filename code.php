@@ -55,38 +55,30 @@ require 'link.php';
 
 
 if (isset($_POST['submit1'])){
-  $user=$_POST['user'];
-  $pword=md5($_POST['password']);
-
-  $db=connect();
-
-
-  $sql="SELECT * FROM `register` WHERE `username`='".$user."' AND `password`='".$pword."'";
-  $result=$db->query($sql);
-  if ($row=$result->fetch_assoc()){
-
- 
-
-
-	
-$_SESSION['user']=$user;
-	    header("Location:workdone.php");
+	  $user=$_POST['user'];
+	    $pword=md5($_POST['password']);
 
 
 
-
-
-	   }
-  
-  
-    
-  }else{
-          echo "Username or Password Incorect";
-
-    header('location:dash.php');
-  }
-
-}
+	    $sql="SELECT * FROM `register` WHERE `username`='".$user."' AND `password`='".$pword."'";
+	      $res=mysqli_query($connection, $sql);
+	      echo mysqli_error($connection);
+	        if(mysqli_num_rows($res) == 1){
+			    if(isset($_POST['remember'])){
+				          setcookie('user', $user, time()+60*60*7);
+					        setcookie('pword', $pword, time()+60*60*7);
+					        }
+			          session_start();
+			          $_SESSION['user'] =$user;
+				        //$_SESSION['time'] =time();
+				       header('location:dash.php');
+				            
+				              }else{
+				                        echo "Username or Password Incorect";
+				  
+				                            
+				                              }
+				                              }
 
 
 ?>
