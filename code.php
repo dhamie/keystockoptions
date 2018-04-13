@@ -46,6 +46,7 @@ require 'link.php';
   if($res == 1){
 
         header('location:login.htm');   
+        die();
       }else{
         echo " mysqli_error($connection);";
 
