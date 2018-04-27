@@ -3,7 +3,7 @@
 	if (!$connection){
     	die("Database Connection Failed" . mysqli_error($connection));
 	}else{
-		echo "connected";
+		//echo "connected";
 	}
 	$select_db = mysqli_select_db($connection, 'ay');
 	if (!$select_db){
