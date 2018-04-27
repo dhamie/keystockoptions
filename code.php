@@ -46,6 +46,7 @@ require 'link.php';
   if($res == 1){
 
         header('location:login.htm');   
+        die();
       }else{
         echo mysqli_error($connection);
 
@@ -55,6 +56,32 @@ require 'link.php';
 
 
 if (isset($_POST['submit1'])){
+<<<<<<< HEAD
+	  $user=$_POST['user'];
+	    $pword=md5($_POST['password']);
+
+
+
+	    $sql="SELECT * FROM `register` WHERE `username`='".$user."' AND `password`='".$pword."'";
+	      $res=mysqli_query($connection, $sql);
+	      echo mysqli_error($connection);
+	        if(mysqli_num_rows($res) == 1){
+			    if(isset($_POST['remember'])){
+				          setcookie('user', $user, time()+60*60*7);
+					        setcookie('pword', $pword, time()+60*60*7);
+					        }
+			          session_start();
+			          $_SESSION['user'] =$user;
+				        //$_SESSION['time'] =time();
+				       header('location:dash.php');
+				            
+				              }else{
+				                        echo "Username or Password Incorect";
+				  
+				                            
+				                              }
+				                              }
+=======
   $user=$_POST['user'];
   $pword=md5($_POST['password']);
 
@@ -79,6 +106,7 @@ if (isset($_POST['submit1'])){
   }
 
 }
+>>>>>>> cee711f96966550a7a97ba90b72489939d7d43fe
 
 
 ?>

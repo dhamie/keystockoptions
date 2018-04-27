@@ -10,6 +10,4 @@
     die("Database Selection Failed" . mysqli_error($connection));
 	}
 
-
-
 ?>
